@@ -12,8 +12,8 @@ Bellman-Ford is an algorithm that finds the shortest paths from a given node (ca
 * weighted digraphs: $$  weights \in R $$, no negative cycles
 
 \\
-The algorithm uses the dynamic programming (DP) optimization method invented by Richard Bellman in 1950. Assuming you are already familiar with dynamic programming, I will just list here the 2 main properties that this kind of algorithms must exhibits:
-* **optimal substructure** : the optimal solution of a given problem can be obtain by using optimal solution of its subproblems
+The algorithm uses the dynamic programming (DP) optimization method invented by Richard Bellman in 1950. Assuming you are already familiar with dynamic programming, I will just list here the 2 main properties that Bellman-Ford algorithm must exhibits:
+* **optimal substructure** : in general, the optimal solution of a given problem can be obtain by using optimal solution of its sub-problems, in this case any sub-path of a shortest path is a shortest-path
 * **overlapping subproblems** : the recursive algorithm visits the same subproblems repeatedly
 
 \\
