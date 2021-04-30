@@ -23,6 +23,6 @@ Single Source Shortest Path algorithms:
   * <a href="/sssp_bellman_ford/"> Bellman-Ford </a>
   * <a href="/sssp_dijkstra/"> Dijkstra </a>
 * Unweighted graph/digraph
-  * Breadth-First Search
+  * <a href="/sssp_bfs/"> Breadth-First Search </a>
 
 ---

@@ -13,9 +13,9 @@ permalink: /graph/
   * Kruskal
   * Prim
 * <a href="/sssp/"> Single Source Shortest Path </a>
-  * Unweighted graphs (BFS)
-  * <a href="/bellman_ford/"> Bellman-Ford </a>
-  * <a href="/dijkstra/"> Dijkstra </a>
+  * <a href="/sssp_bfs/"> Unweighted graphs/digraphs (BFS) </a>
+  * <a href="/sssp_bellman_ford/"> Bellman-Ford </a>
+  * <a href="/sssp_dijkstra/"> Dijkstra </a>
 * All Pairs Shortest Paths
   * Matrix Multiplication
   * Floyd-Warshall
