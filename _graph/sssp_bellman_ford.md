@@ -2,7 +2,7 @@
 layout: page
 title: Bellman-Ford
 category: Graph
-permalink: /bellman_ford/
+permalink: /sssp_bellman_ford/
 ---
 
 ## Algorithm

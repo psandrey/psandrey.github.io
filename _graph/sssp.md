@@ -20,8 +20,8 @@ So, now let's write some math and define these terms a little more rigorously.
 \\
 Single Source Shortest Path algorithms:
 * Weighted graph/digraph
-  * <a href="/bellman_ford/"> Bellman-Ford </a>
-  * <a href="/dijkstra/"> Dijkstra </a>
+  * <a href="/sssp_bellman_ford/"> Bellman-Ford </a>
+  * <a href="/sssp_dijkstra/"> Dijkstra </a>
 * Unweighted graph/digraph
   * Breadth-First Search
 

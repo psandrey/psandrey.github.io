@@ -2,7 +2,7 @@
 layout: page
 title: Dijkstra
 category: Graph
-permalink: /dijkstra/
+permalink: /sssp_dijkstra/
 ---
 
 ## Algorithm
