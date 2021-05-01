@@ -7,11 +7,11 @@ permalink: /sssp_bfs/
 
 ## Algorithm
 
-Breadth First Search (BFS) finds all shortest paths from a given node (called the source) to all reachable nodes from it in an **unweighted graph/digraph**. We already went through BFS’s details in the Graph Traversal (TODO – add link) section so, here I’ll handle only the shortest paths property. \\
+Breadth First Search (BFS) finds all shortest paths from a given node (called the source) to all reachable nodes from it in an **unweighted graph/digraph**. We already went through BFS’s details in the Graph Traversal (TODO – add link) section so, here I’ll handle only the shortest paths property.
 
 <br>
 
-**Claim:** BFS computes the sets $$ L_i $$ of nodes at distance $$ i $$ from source $$ s $$ for all $$ i $$: $$ L_i = \left \{ u : d(s, u) = i \right \} $$. \\
+**Claim:** BFS computes the sets $$ L_i $$ of nodes at distance $$ i $$ from source $$ s $$ for all $$ i $$: $$ L_i = \left \{ u : d(s, u) = i \right \} $$.
 
 \\
 **Proof by induction:** \\
@@ -53,8 +53,8 @@ vector<int>
 
 ### Example
 
-![pic_01](/graph/img/sssp_bfs_1.png){:height="280pt" style="float: left"}
-![pic_02](/graph/img/sssp_bfs_2.png){:height="280pt" style="float: left"}
+![pic_01](/graph/img/sssp_bfs_1.png){:height="270pt" style="float: left"}
+![pic_02](/graph/img/sssp_bfs_2.png){:height="270pt" style="float: left"}
 
 {:style="clear:both"}
 
