@@ -8,7 +8,7 @@ permalink: /sssp_dijkstra/
 ## Algorithm
 
 Dijkstra’s algorithm is an algorithm that finds the shortest paths from a given node (called the source) to all reachable nodes from it in a **weighted digraph with positive weights**. It was made by Edsger W. Dijkstra in 1956. This algorithm qualifies as a greedy algorithm. Assuming you are already familiar with greedy heuristics, I will just list here the 2 main properties that Dijkstra algorithm must exhibits:
-* **optimal substructure** : in general, the optimal solution of a given problem can be obtain by using optimal solution of its sub-problems. In case of Dijkstra, any sub-path of a shortest path is a shortest-path (similar with Kruskal – see the similarity).
+* **optimal substructure** : in general, the optimal solution of a given problem can be obtain by using optimal solution of its sub-problems. In case of Dijkstra, any sub-path of a shortest path is a shortest-path (similar with Bellman-Ford – see the similarity).
 * **greedy choice property** : make the optimal local choice in the hope of obtaining the global optimum, or in other words, make the best choice at the current moment and then solve the next sub-problems. In case of Dijkstra, let $$ S $$ be the set of nodes whose shortest distances are already known. Then the estimated distance from $$ s \in S $$ to $$ v \in \left \{  S - V\right \} $$ through edge $$ (u, v) $$, where $$ u \in S $$ is the shortest distance from $$ s $$ to $$ v $$ (see the picture below for clarity).
 
 ![pic_01](/graph/img/sssp_dijkstra_1.png){:height="280pt" style="left"}
@@ -165,7 +165,22 @@ Basically, it is immediately proven by the greedy choice property (see above): $
 
 ## Complexity
 
-Each node is removed from the multiset once, and since each removal is logarithmic, then we have $$ O(Vlog (V)) $$. For each removed node from multiset, the estimated distance thru the edge to the other endpoint is updated, so $$ O(E) $$. Putting everything together the time complexity is $$ T(V, E) = O(VE + Vlog(V)) $$. The time complexity for the simple implementation is $$ T(V, E) = O(V^{2} + EV) $$.
+$$ \sum_{v \in V}degree(v) = 2E $$ (1) , graphs (Handshaking Lemma) \\
+$$ \sum_{v \in V}degree(v) = E $$ (2) , digraphs
+
+### looping version
+$$ T(V,E) = \sum_{v \in V}\left( T_{getMin} + degree(v) \right )\stackrel{(1, 2)}{=} O(V^{2}) $$
+
+### std::multiset version
+
+Each node is removed from the multiset once, and since each removal is logarithmic, then we have $$ \sum_{v \in V} log(V) = O(Vlog (V)) $$. For each removed node from multiset, the estimated distances through the incident edges are updated (i.e. removed and added again with the new distance), so we have $$ \sum_{v \in V} \left( degree(v) 2 log(V) \right ) \stackrel{(1, 2)}{=} O( 2Elog(V)) = O(Elog(V)) $$.
+
+\\
+Therefore, the time complexity is $$ T(V, E) = O(Vlog (V) + Elog(V)) = O((V+E)log(V)) $$.
+
+<br>
+
+The auxiliary space complexity is: $$ S(V, E) = O(V) $$ .
 
 ## Dijkstra and Negative Weights
 
