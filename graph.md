@@ -16,10 +16,10 @@ permalink: /graph/
   * <a href="/sssp_bfs/"> Unweighted graphs/digraphs (BFS) </a>
   * <a href="/sssp_bellman_ford/"> Bellman-Ford </a>
   * <a href="/sssp_dijkstra/"> Dijkstra </a>
-* All Pairs Shortest Paths
-  * Matrix Multiplication
-  * Floyd-Warshall
-  * Johnson's algorithm
+* <a href="/apsp/"> All Pairs Shortest Paths </a>
+  * <a href="/apsp_generalized_bellman_ford/"> Generalization of Bellman-Ford </a>
+  * <a href="/apsp_floyd_warshall/"> Floyd-Warshall </a>
+  * <a href="/apsp_johnson/"> Johnson's algorithm </a>
 * Classic Paths and Cycles
   * Shortest Simple Cycle (girth)
   * Eulerian Path/Cycle

@@ -74,6 +74,23 @@ code {
 	margin: 0px;
 }
 
+table{
+    border-collapse: collapse;
+    border:2px solid #000000;
+	margin:10pt;
+	float: left;
+}
+
+th{
+    border:1px solid #000000;
+	padding: 8pt;
+}
+
+td{
+    border:1px solid #000000;
+	padding: 8pt;
+}
+
 hr.grey {
 	border: 1px solid #ccc;
 }
