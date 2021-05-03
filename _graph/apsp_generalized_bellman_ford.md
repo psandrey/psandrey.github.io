@@ -86,7 +86,7 @@ vector<vector<int>> apspBFord(int n, std::vector<std::vector<int>>& adjM) {
 | k=2 | 0   | 1   | 2   | 3 |
 |-----|-----|-----|-----|---|
 | 0   | 0   | 1   | 2   | 5 |
-| 1   | 2   | 0   | 1   | 1 |
+| 1   | 2   | 0   | 1   | 2 |
 | 2   | 1   | 2   | 0   | 1 |
 | 3   | inf | inf | inf | 0 |
 
@@ -94,7 +94,7 @@ vector<vector<int>> apspBFord(int n, std::vector<std::vector<int>>& adjM) {
 | k=3 | 0   | 1   | 2   | 3 |
 |-----|-----|-----|-----|---|
 | 0   | 0   | 1   | 2   | 3 |
-| 1   | 2   | 0   | 1   | 1 |
+| 1   | 2   | 0   | 1   | 2 |
 | 2   | 1   | 2   | 0   | 1 |
 | 3   | inf | inf | inf | 0 |
 
