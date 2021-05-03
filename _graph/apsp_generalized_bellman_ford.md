@@ -2,7 +2,7 @@
 layout: page
 title: Generalization of Bellman-Ford
 category: Graph
-permalink: /apsp_generalized_bellman_ford//
+permalink: /apsp_generalized_bellman_ford/
 ---
 
 Quick Reference

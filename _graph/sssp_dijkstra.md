@@ -5,6 +5,12 @@ category: Graph
 permalink: /sssp_dijkstra/
 ---
 
+Quick Reference
+* toc
+{:toc}
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## Algorithm
 
 Dijkstra’s algorithm is an algorithm that finds the shortest paths from a given node (called the source) to all reachable nodes from it in a **weighted digraph with positive weights**. It was made by Edsger W. Dijkstra in 1956. This algorithm qualifies as a greedy algorithm. Assuming you are already familiar with greedy heuristics, I will just list here the 2 main properties that Dijkstra algorithm must exhibits:

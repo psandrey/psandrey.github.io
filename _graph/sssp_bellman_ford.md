@@ -5,6 +5,12 @@ category: Graph
 permalink: /sssp_bellman_ford/
 ---
 
+Quick Reference
+* toc
+{:toc}
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## Algorithm
 
 Bellman-Ford is an algorithm that finds the shortest paths from a given node (called the source) to all reachable nodes from it in a **weighted digraph without negative cycles**. Although it was designed to work on digraph, it works on graphs if each edge is replaced with 2 directional edges of the same weight and opposite direction. But, if an edge has negative weight, then replacing it with directed edges forms a negative cycle and the algorithm fails.
@@ -70,8 +76,7 @@ d^{k}[v]=min_{u \in V}\begin{cases}
             \end{cases} \quad
 $$
 
-\\
-Here is a cpp implementation of the algorithm:
+### Implementation
 
 ```cpp
 tuple<bool, vector<int>, vector<int>>
@@ -156,7 +161,7 @@ Auxiliary space complexity is $$ S(V, E) = O(V) $$.
 
 ## Miscellaneous (the memoization version)
 
-When the tabulation method is used, the distances to each node are constructed by incrementing the number of the maximum number of edges used, but the when the memorization method is used the distances are arbitrary. So, for memoization we need the second dimension for dp table. Here is a trivial example, however it is useful to clear any doubt.
+When the tabulation method is used, the distances to each node are constructed by incrementing the number of the maximum number of edges used, but the when the memoization method is used the distances are arbitrary. So, for memoization we need the second dimension for dp table. Here is a trivial example, however it is useful to clear any doubt.
 
 \\
 ![pic_07](/graph/img/sssp_bellman_ford_8.png){:height="250pt" style="float: left"}

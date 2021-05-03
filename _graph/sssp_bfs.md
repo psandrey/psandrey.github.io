@@ -5,6 +5,12 @@ category: Graph
 permalink: /sssp_bfs/
 ---
 
+Quick Reference
+* toc
+{:toc}
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## Algorithm
 
 Breadth First Search (BFS) finds all shortest paths from a given node (called the source) to all reachable nodes from it in an **unweighted graph/digraph**. We already went through BFS’s details in the Graph Traversal (TODO – add link) section so, here I’ll handle only the shortest paths property.
