@@ -180,10 +180,15 @@ hr.grey {
 	margin-top: 20px;
 }
 
-.nav-title {
+.nav-title-hi {
+	font-size: 130%;
+	font-family: "Noto Sans";
+}
+
+.nav-title-low {
 	font-size: 110%;
 	font-family: "Noto Sans";
-	text-transform: uppercase;
+	font-style: italic;
 	border-bottom: 1px solid gray;
 	margin-bottom: 5px;
 }
