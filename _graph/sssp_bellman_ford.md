@@ -80,7 +80,7 @@ $$
 
 ```cpp
 tuple<bool, vector<int>, vector<int>>
-	BFord(int source, int n, vector<vector<int>>& edges) {
+	bellmanFord(int source, int n, vector<vector<int>>& edges) {
 
 	bool cycles = false;
 	vector<int> d(n, INF), p(n); // distance, predecessor
@@ -108,6 +108,46 @@ tuple<bool, vector<int>, vector<int>>
 	}
 
 	return make_tuple(cycles, d, p);
+}
+```
+
+```cpp
+tuple<bool, vector<int>>
+	bellmanFord(int start, int n, vector<vector<pair<int, int>>>& adjL) {
+
+	bool cycle = false;
+	vector<int> d(n, INF);
+	d[start] = 0;
+
+	for (int k = 1; k <= n - 1; k++) {
+		for (int u = 0; u < n; u++) {
+			if (d[u] == INF) continue;
+
+			for (pair<int, int> p : adjL[u]) {
+				int v = p.first;
+				int w = p.second;
+
+				d[v] = min(d[v], d[u] + w); // relaxation
+			}
+		}
+	}
+
+	// check for cycles
+	for (int u = 0; u < n; u++) {
+		if (d[u] == INF) continue;
+
+		for (pair<int, int> p : adjL[u]) {
+			int v = p.first;
+			int w = p.second;
+			if (d[v] > d[u] + w) {
+				cycle = true; break;
+			}
+		}
+
+		if (cycle) break;
+	}
+
+	return make_pair(cycle, d);
 }
 ```
 
@@ -188,7 +228,7 @@ Now, let's assume that the second recursive call visits nodes in this order: $$ 
 
 Here is a cpp implementation of the algorithm using memoization:
 ```cpp
-vector<int> BFordr(int source, int n,
+vector<int> bellmanFordr(int source, int n,
 		vector<vector<pair<int, int>>>& adjL) {
 
 	// build incidence list
