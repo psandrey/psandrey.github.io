@@ -20,9 +20,9 @@ permalink: /graph/
   * <a href="/apsp_generalized_bellman_ford/"> Generalization of Bellman-Ford </a>
   * <a href="/apsp_floyd_warshall/"> Floyd-Warshall </a>
   * <a href="/apsp_johnson/"> Johnson's algorithm </a>
-* Classic Paths and Cycles
-  * Shortest Simple Cycle (girth)
-  * Eulerian Path/Cycle
-  * Hamiltonian Path/Cycle
+* <a href="/cpc_classic_paths_cycles/"> Classic Paths and Cycles </a>
+  * <a href="/cpc_girth/"> Shortest Simple Cycle (girth) </a>
+  * <a href="/cpc_eulerian/"> Eulerian Path/Cycle </a>
+  * <a href="/cpc_hamiltonian/"> Hamiltonian Path/Cycle </a>
 * Network Flows
   * Floyd-Warshall / Edmonds-Karp
