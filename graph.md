@@ -24,5 +24,5 @@ permalink: /graph/
   * <a href="/cpc_girth/"> Shortest Simple Cycle (girth) </a>
   * <a href="/cpc_eulerian/"> Eulerian Path/Cycle </a>
   * <a href="/cpc_hamiltonian/"> Hamiltonian Path/Cycle </a>
-* Network Flows
-  * Floyd-Warshall / Edmonds-Karp
+* <a href="/nf_flows_net/"> Flow Network </a>
+  * <a href="/nf_fulkerson_karp/"> Ford-Fulkerson / Edmonds-Karp </a>
