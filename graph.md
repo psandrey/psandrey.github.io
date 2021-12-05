@@ -4,10 +4,11 @@ title: Graph Algorithms
 permalink: /graph/
 ---
 
-* Graph Traversals
-  * Depth-first search
-  * Breadth-first search
-  * Cycle Detection / Topological Sort
+* <a href="/defs/"> Graphs' definitions and representations </a>
+* <a href="/traversal/"> Graph Traversals </a>
+  * <a href="/dfs/"> Depth-first search </a>
+  * <a href="/bfs/"> Breadth-first search </a>
+  * <a href="/cycle_topo/"> Cycle Detection / Topological Sort </a>
 * Connected Components
 * Minimum Spanning Tree
   * Kruskal

@@ -4,7 +4,6 @@ title: Hamiltonian Path/Cycle
 permalink: /cpc_hamiltonian/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

@@ -5,7 +5,6 @@ category: Graph
 permalink: /sssp_bfs/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

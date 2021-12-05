@@ -4,7 +4,6 @@ title: Eulerian Path/Cycle
 permalink: /cpc_eulerian/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

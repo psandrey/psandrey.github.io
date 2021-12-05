@@ -4,7 +4,6 @@ title: Floyd-Warshall
 permalink: /apsp_floyd_warshall/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

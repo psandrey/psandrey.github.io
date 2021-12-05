@@ -5,7 +5,6 @@ category: Graph
 permalink: /sssp_bellman_ford/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

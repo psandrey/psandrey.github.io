@@ -5,7 +5,6 @@ category: Graph
 permalink: /nf_fulkerson_karp/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

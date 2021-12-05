@@ -5,7 +5,6 @@ category: Graph
 permalink: /sssp_dijkstra/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

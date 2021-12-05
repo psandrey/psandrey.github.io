@@ -17,7 +17,8 @@ So, now let's write some math and define these terms a little more rigorously.
 * $$ {dist}_{min} (v_i,v_j )= min \left \{ w(p) = {\sum }_{(u,v)\in p)} w(u,v): v_i\overset{p}{\rightarrow}v_j \right \} $$, if $$ ∃p⊆E $$
 * $$ {dist}_{min} (v_i,v_j )= \infty $$, if $$ ∄p $$
 
-\\
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 Single Source Shortest Path algorithms:
 * Weighted graph/digraph
   * <a href="/sssp_bellman_ford/"> Bellman-Ford </a>

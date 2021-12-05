@@ -4,7 +4,6 @@ title: Shortest Simple Cycle (girth)
 permalink: /cpc_girth/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

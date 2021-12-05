@@ -5,7 +5,6 @@ category: Graph
 permalink: /apsp_johnson/
 ---
 
-Quick Reference
 * toc
 {:toc}
 

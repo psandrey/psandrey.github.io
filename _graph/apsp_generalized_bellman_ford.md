@@ -5,7 +5,6 @@ category: Graph
 permalink: /apsp_generalized_bellman_ford/
 ---
 
-Quick Reference
 * toc
 {:toc}
 
