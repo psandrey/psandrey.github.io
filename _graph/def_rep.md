@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Graphs' definitions and representations
-permalink: /defs/
+permalink: /graph_defs/
 ---
 
 * toc

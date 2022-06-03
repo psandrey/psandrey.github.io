@@ -4,7 +4,7 @@ title: Graph Algorithms
 permalink: /graph/
 ---
 
-* <a href="/defs/"> Graphs' definitions and representations </a>
+* <a href="/graph_defs/"> Graphs' definitions and representations </a>
 * <a href="/traversal/"> Graph Traversals </a>
   * <a href="/dfs/"> Depth-first search </a>
   * <a href="/bfs/"> Breadth-first search </a>

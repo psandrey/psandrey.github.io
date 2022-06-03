@@ -18,7 +18,12 @@ plugins:
 category_dir: category/
 tag_dir: tag/
 
-collections: 
+collections:
+  sort:
+    output: true
+  comparison_sort:
+    output: true
+    permalink: /sort/:name
   graph:
     output: true
 
