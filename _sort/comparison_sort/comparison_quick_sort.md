@@ -4,7 +4,20 @@ title: Quick Sort
 permalink: /sort/comparison_quick_sort/
 ---
 
-Recursive version:
+* toc
+{:toc}
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
+## The Algorithm
+TODO
+
+### Description
+TODO
+
+### Implementation
+
+#### Recursive version
 
 ```cpp
 void quicksort(vector<int>& a, int s, int e) {
@@ -32,7 +45,7 @@ int partition(vector<int>& a, int s, int e) {
 }
 ```
 
-Iterative version:
+#### Iterative version
 ```cpp
 void quicksort(vector<int>& a) {
     if (a.size() <= 1) return;
@@ -50,5 +63,16 @@ void quicksort(vector<int>& a) {
     }
 }
 ```
+## Correctness
+TODO
+
+## Complexity Analysis
+TODO
+
+### Time Complexity
+TODO
+
+### Space Complexity (auxiliary)
+TODO
 
 ---

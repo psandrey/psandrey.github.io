@@ -4,8 +4,20 @@ title: Merge Sort
 permalink: /sort/comparison_merge_sort/
 ---
 
-Recursive version:
+* toc
+{:toc}
 
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
+## The Algorithm
+TODO
+
+### Description
+TODO
+
+### Implementation
+
+#### Recursive version
 ```cpp
 void sort(vector<int>& a, int s, int e) {
     if (e - s <= 1) return;
@@ -32,8 +44,7 @@ void merge(vector<int>& a, int s, int m, int e) {
 }
 ```
 
-Iterative version:
-
+#### Iterative version
 ```cpp
 void sort(vector<int>& a) {
     if (a.size() <= 1) return;
@@ -64,5 +75,16 @@ void sort(vector<int>& a) {
     }
 }
 ```
+## Correctness
+TODO
+
+## Complexity Analysis
+TODO
+
+### Time Complexity
+TODO
+
+### Space Complexity (auxiliary)
+TODO
 
 ---
