@@ -23,10 +23,10 @@ There can be at most $$ n $$ sweep, since we have $$ n $$ items to sink. Each it
 void sort(vector<int>& a) {
     if (a.size() <= 1) return;
 
-    for (int i = 0; i < (int)a.size(); i++) {
+    for (int i = 0; i < (int)a.size(); ++i) {
 
         bool swapped = false;
-        for (int j = 0; j < (int)a.size() - 1; j++) {
+        for (int j = 0; j < (int)a.size() - 1; ++j) {
             if (a[j] > a[j + 1]) {
                 swap(a[j], a[j + 1]);
                 swapped = true;
@@ -46,23 +46,23 @@ There are at most $$ n $$ sweeps since there are at most $$ n $$ items that need
 
 ### Time Complexity
 
- * **Worst Case** : $$ O(n^2) $$
- * **Average Case** : $$ O(n^2) $$
- * **Best Case**: $$ O(n) $$
+ * **Worst Case** : $$ \theta(n^2) $$
+ * **Average Case** : $$ \theta(n^2) $$
+ * **Best Case**: $$ \theta(n) $$
 
 <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
 In the **wors-case**, the outter loop runs n times. The inner loop runs n-1 times for the first outter loop, n-2 times for the second outter loop and so on.
-$$ T(n) = (n-1) + (n-2) + (n-3) + ... + 1 + 1 = \frac{n(n-1)}{2} + 1 = O(n^2) $$. \\
+$$ T(n) = (n-1) + (n-2) + (n-3) + ... + 1 + 1 = \frac{n(n-1)}{2} + 1 = \theta(n^2) $$. \\
 \\
 In the **average-case** (when the sequence is half sorted), the outter loop runs $$ \frac{n}{2} + 1 $$ times and the intter loop runs the same as before (n-1 times for the first outter loop, n-2 times for the second outter loop and so on).
-$$ T(n) = (n-1) + (n-2) + (n-3) + ... + \frac{n}{2} + 1 = O(n^2) $$.\\
+$$ T(n) = (n-1) + (n-2) + (n-3) + ... + \frac{n}{2} + 1 = \theta(n^2) $$.\\
 \\
 In the **best-case** (when the sequence is already sorted). the outter and inner loop runs once.
-$$ T(n) = O(1) $$.
+$$ T(n) = \theta(1) $$.
 
 ### Space Complexity (auxiliary)
 
- * Trivial, $$ S(n) = O(1) $$
+ * $$ S(n) = \theta(1) $$.
 
 ---
