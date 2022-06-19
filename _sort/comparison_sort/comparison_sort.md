@@ -10,12 +10,12 @@ Comparison sorting is a class of sorting algorithms that relies on comparison op
   
  <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
-  * <a href="/sort/comparison_bogosort/"> Bogosort (aka. Shotgun sort, Stupid sort, Random sort, Permutation sort) </a>
-  * <a href="/sort/comparison_bubble_sort/"> Bubble Sort </a>
-  * <a href="/sort/comparison_selection_sort/"> Selection Sort </a>
-  * <a href="/sort/comparison_insertsion_sort/"> Insertion Sort </a>
-  * <a href="/sort/comparison_merge_sort/"> Merge Sort </a>
-  * <a href="/sort/comparison_quick_sort/"> Quicksort </a>
-  * <a href="/sort/comparison_heap_sort/"> Heapsort </a>
+  * <a href="/sort/comparison_sort/bogosort/"> Bogosort (aka. Shotgun sort, Stupid sort, Random sort, Permutation sort) </a>
+  * <a href="/sort/comparison_sort/bubble_sort/"> Bubble Sort </a>
+  * <a href="/sort/comparison_sort/selection_sort/"> Selection Sort </a>
+  * <a href="/sort/comparison_sort/insertsion_sort/"> Insertion Sort </a>
+  * <a href="/sort/comparison_sort/merge_sort/"> Merge Sort </a>
+  * <a href="/sort/comparison_sort/quick_sort/"> Quicksort </a>
+  * <a href="/sort/comparison_sort/heap_sort/"> Heapsort </a>
 
 ---

@@ -12,9 +12,9 @@ It is worth mentioning that on machines with multiple processing units these met
 
  <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
-  * <a href="/sort/distribution_counting_sort/"> Counting Sort </a>
-  * <a href="/sort/distribution_radix_sort/"> Radix Sort </a>
-  * <a href="/sort/distribution_pigeonhole_sort/"> Pigeonhole Sort </a>
-  * <a href="/sort/distribution_bucket_sort/"> Bucket Sort </a>
+  * <a href="/sort/distribution_sort/counting_sort/"> Counting Sort </a>
+  * <a href="/sort/distribution_sort/radix_sort/"> Radix Sort </a>
+  * <a href="/sort/distribution_sort/pigeonhole_sort/"> Pigeonhole Sort </a>
+  * <a href="/sort/distribution_sort/bucket_sort/"> Bucket Sort </a>
 
 ---

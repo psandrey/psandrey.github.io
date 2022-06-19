@@ -19,13 +19,34 @@ category_dir: category/
 tag_dir: tag/
 
 collections:
+
+  analysis:
+    output: true
+    permalink: /analysis:name
+
+  data_structures:
+    output: true
+    permalink: /data_structures:name
+
+  paradigm:
+    output: true
+    permalink: /paradigm:name
+
   sort:
     output: true
-  comparison_sort:
-    output: true
     permalink: /sort/:name
+
+  search:
+    output: true
+    permalink: /search:name
+
   graph:
     output: true
+    permalink: /graph:name
+
+  string:
+    output: true
+    permalink: /string:name
 
 # Exclude these files from production site
 exclude:
