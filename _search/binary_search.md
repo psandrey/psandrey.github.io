@@ -11,8 +11,8 @@ permalink: /search/binary_search/
 
 ## Algorithm description
 
-Given a monotonic function $$ f $$ and a $$ target $$, the **binary search** (aka. half-interval search or logarithmic search) algorithm finds the position $$ x $$ for which $$ f(x) = target $$. In case the function is discrete, then we have a discrete search space and we can find the precise position of the target (if exists) or in case the function is continuous (the set of real numbers is dense) we might not be able to find the exact target position, so we find some $$ x $$ such that $$ f(x) $$ is close to $$ target $$ with some aceptable tolerance. In both cases, the position is found by halving the search interval at each iteration based on the comparison between the middle item and the target.\\
-**Note:** Basically, the search space is an interval of the domain of the function and the target value is an item of the codomain. \\
+Given a monotonic function $$ f $$ and a $$ target $$, the **binary search** (aka. half-interval search or logarithmic search) algorithm finds the position $$ x $$ for which $$ f(x) = target $$. In case the function is discrete, then we have a discrete search space and we can find the precise position of the target or in case the function is continuous (the set of real numbers is dense) then we might not be able to find the exact target position, so we find some $$ x $$ such that $$ f(x) $$ is close to $$ target $$ with some aceptable tolerance. In both cases, the position is found by halving the search interval at each iteration based on the comparison between the middle item and the target.\\
+**Note:** Basically, the search space is an interval of the domain of the function and the target is a value of the codomain. \\
 \\
 In case you do not remember: a **monotonic function** is a function which is either nonincreasing or nondecreasing:
 * monotonic:
@@ -75,7 +75,7 @@ double search(double low, double high, double target) {
 ## Complexity
 
 Time complexity in worst-case and average-case is $$ log_2(n) $$ and in best-case is $$ O(1) $$. \\
-Spaec complexity (auxiliary) is $$ O(1) $$.
+Space complexity (auxiliary) is $$ O(1) $$.
 
 ## Practice
 
