@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Algorithmic paradigm
+title: Algorithmic paradigms
 permalink: /paradigm/
 ---
 
@@ -67,9 +67,9 @@ To clear any doubts, lets see a picture of how to place the third queen on the t
 
 | c\r | _1_ | _2_ | _3_ | _4_ | _5_ | _6_ | _7_ | _8_ |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| _2_ |     |     | Q   |     |     |     |     |     |
-| _3_ | Q   |     |     |     |     |     |     |     |
-| _4_ | X   | X   | X   | Q   |     |     |     |     |
+| _1_ |     |     | Q   |     |     |     |     |     |
+| _2_ | Q   |     |     |     |     |     |     |     |
+| _3_ | X   | X   | X   | Q   |     |     |     |     |
 
 \\
 So, we have a queen on the third column on the first row and a queen on the first column on the second row. When we try to place the third queen on the third row, we prune the branches that are generated for first, second and third column since it attacks the previous placed queens. We can see that these positions are generated incrementally, and no possible position is omitted. The forth position is valid, so we place the queen there and then we try the next queen on the next row.
@@ -77,23 +77,22 @@ So, we have a queen on the third column on the first row and a queen on the firs
 {:style="clear:both"}
 
 \\
-So, we can deduce two important properties for the Backtracking paradigm:
+We can deduce two important properties for the Backtracking paradigm:
 1. No repetition and completion: it is a generation method that avoids repetitions without omitting any solution;
 2. Search pruning: because the final solutions are built incrementally, the partial solutions can be evaluated and the branches that are not leading to a valid final solution or lead to a worse that already known solution are pruned.
 
 \\
 Now, lets see a simple implementation for the 8-queens problem that returns the number of solutions:
-1. Data structure to represent the state: a vector as a stack where the index in the vector represents the row and the value the current valid position for the queen on that row (basically, the column).
-2. Check for valid position: two queens ca attack each other if they are on the same row, col or diagonal 
+1. The data structure used to represent the states: a vector used as a stack where the index in the vector represents the row and the value represents the current valid position for the queen on that row (basically, the column).
+2. How to check if a position is valid: two queens are attacking each other if they are on the same row, col or diagonal 
     * row attack: $$ row_{current} = row $$.
     * col attack: $$ col_{current} = col $$.
     * diagonal attack: $$ \left\| row_{current} - row \right\| = \left\| col_{current} - col \right\| $$ .
-3. Check for solution: stack/vector size is equal to 8 – it means that we placed all queens on the table and any two pairs are not attacking each other.
+3. How to check if the current state is a valid solution: the stack/vector size is equal to 8 – it means that we put all the queens on the table and any two pairs of queens don't attack each other.
 
 
 ```cpp
 int queens(int n) {
-
 	vector<int> st;
 	return backtracking(st, n);
 }
@@ -123,14 +122,18 @@ bool valid(vector<int>& st, int col) {
 			return false; // if attach on row, col or diagonal, then position is not valid
 	}
 
-	return true; // no attack, then the position is valid
+	return true; // no attack so, the position is valid
 }
 
 ```
 
+### Iterative version
+
+TODO
+
 ### Practice Backtraking
 
-Usually, we see problems in form of combinations or permutations and we need to enumerate all solutions that are within given constraints conditions. See below a few iconic problems to practice this paradigm:
+Usually, the problems that are solved by the backtracking method are in the form of combinations or permutations, and the requirement is to list all the solutions that satisfy some given constraints. See below some iconic problems you can use to practice this paradigm:
 
 1.	Generate permutations [leetcode](https://leetcode.com/problems/permutations/)
 2.	Generate combinations [leetcode](https://leetcode.com/problems/combinations/)
@@ -142,12 +145,66 @@ Usually, we see problems in form of combinations or permutations and we need to 
 
 ## Divide and conquer
 
-TODO
+**Divide and conquer** is an algorithmic paradigm that breaks a complex problem into smaller and  more easily solvable problems. Here are few important algorithms that uses this technique: mergesort, quicksort and performing matrix multiplication. One small note, binary search does not use divide and conquer technique – a divide and conquer algorithm have at least two **disjoint** recursive call which binary search does not have. \\
+\\
+So, a divide and conquer algorithm break down the initial problem (the general case) into two or more subproblems of the same type until it becomes simple enough to be solvable immediately (the base case). Then the solutions to these subproblems are combined to solve the original problem:
+* Step 1 – **Divide** the given problem into a set of subproblems.
+* Step 2 – **Conquer**: solve these subproblems recursively.
+* Step 3 – **Combine** the solutions to the subproblems to solve the original problem.
+Note: when you design an algorithm by using this technique, you need to define 2 things:
+1.	The recursive formula (the general case)
+2.	The stopping condition (the base case): the basic problem that can be solved immediately.
+
+\\
+**Note**: There is a strong relation between recurrences and Divide-and-conquer method for designing algorithms, please see
+Asymptotic Analysis for Recurrences, The “Master Theorem” Method and The “Guess-and-Confirm” Method.
+
+### Practice Divide and conquer
+
+1. <a href="/sort/comparison_sort/merge_sort/"> Merge Sort </a>
+2. <a href="/sort/comparison_sort/quick_sort/"> Quicksort </a>
+3. Strassen's algorithm for matrix multiplication: [topcoder.com](https://www.topcoder.com/thrive/articles/strassenss-algorithm-for-matrix-multiplication)
+4. Towers of Hanoi: [Briliant.org](https://brilliant.org/wiki/recurrence-relations-method-of-summation-factors/#example-1-the-tower-of-hanoi-problem)
+5. Majority Element: [leetcode](https://leetcode.com/problems/majority-element/solution/)
+6. Median of Two Sorted Arrays: [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
 ## Dynamic programming
 
-TODO
+**Dynamic programming (DP)** is basically an optimization method over plain recursion. It was invented by Bellman in 1950. Bellman used this technique to solve the single-source shortest-path problem in a graph. As with divide and conquer, it is based on dividing the problem into subproblems which are solved recursively. The difference stays in the fact that the subproblems in divide and conquer are disjunctive (i.e. the subproblems are unique on every branch), while for DP some subproblems are overlapping. Thus, to avoid the redundant work we can cache the result of every subproblem when first solved so it can be reused when needed instead of recomputing – sacrifice some space  to speed up the algorithm. \\
+\\
+Storing results can be done in two ways:
+* memoization: store the results within the recursive calls
+* tabulation: build a cache table iteratively from smallest subproblems to bigger subproblems
+
+Both approaches can be applied to any problem that is solvable using DP and most of the time both approaches have the same time complexity, however in practice usualy the tabulation performs better, because it consumes less memory. TODO: give examples.
+
+\\
+I want to make a small note here, because I’ve seen that tabulation is referred as bottom-up approach and memoization as top-down approach. This is a common mistake; the DP is a bottom-up approach for both. For memoization recursion goes as deep as possible until the smallest problem is solved immediately (the base case) and on the way back the results are combined to solve the bigger subproblems, so it is a bottom-up approach. For tabulation is obvious.
+
+\\
+To be able to apply this technique, the problem must exhibit two properties:
+* **Optimal structure**: if an optimal solution of a given problem can be obtain by using optimal solutions of its subproblems, then the problem exhibits the optimal structure property.
+*  **Overlapping subproblems**: if a recursive algorithm visits the same subproblem more than once, then the problem exhibits the overlapping subproblems property.
+
+\\
+Let’s assume we know that a problem has these properties. So, let’s see how to approach and solve it by using DP in 5 steps (from [Erik Demaine](https://en.wikipedia.org/wiki/Erik_Demaine)’s lecture - "double rainbow" :)) ):
+1. define the subproblems
+2, guess part of the solution
+3. relate subproblem's solutions
+4. build the algorithm by using memoization or tabulation
+5. solve the original problem
+
 
 ## Greedy
 
 TODO
+
+## More reading
+
+* Backtracking
+    * [Briliant.org](https://brilliant.org/wiki/recursive-backtracking/)
+    * Skiena, second edition, section 7.1, pg. 231
+* Divide and conquer
+    * [Briliant.org](https://brilliant.org/wiki/divide-and-conquer/)
+    * Skiena, second edition, section 4.10, pg. 135
+	* Cormen, third edition, section 4, pg. 65
