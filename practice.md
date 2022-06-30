@@ -24,7 +24,29 @@ permalink: /practice/
         5. Majority Element: [leetcode](https://leetcode.com/problems/majority-element/solution/)
         6. Median of Two Sorted Arrays: [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/)
     * Dynamic programming
+        * Prefixes/Suffixes: 
+            1. TODO: Kadane
+            2. TODO: Largest Sum Contiguous Subarray
+            3. Largest Increasing Subsequence: [topcoder.com](https://www.topcoder.com/thrive/articles/longest-increasing-subsequence?utm_source=thrive&utm_campaign=thrive-feed&utm_medium=rss-feed)
+        * Interval:
+            1. TODO: Longest Common Subsequence
+            2. TODO: Edit Distance (Levenshtein distance)
+            3. <a href="/graph/single_source_shortest_path/bellman_ford/"> Bellman-Ford </a>
+            4. <a href="/graph/all_pairs_shortest_path/floyd_warshall/"> Floyd-Warshall </a>
+        * Bitmask:
+            1. TODO: Bellman-Held-Karp (Shortest Superstring Problem)
+        * Pseudo-polynomial:
+            1. TODO: Rod cutting
+            2. TODO: Knapsack 0-1
+            3. TODO: Coin Change Problem
     * Greedy
+        1. <a href="/graph/single_source_shortest_path/dijkstra/"> Single-Source Shortest Paths — Dijkstra’s Algorithm </a>
+        2. <a href="/graph/minimum_spanning_tree/kruskal/"> Kruskal’s Algorithm for finding Minimum Spanning Tree </a>
+        3. <a href="/graph/minimum_spanning_tree/prim/"> Prim’s Algorithm for finding Minimum Spanning Tree </a>
+        4. Graph Coloring Problem [brilliant.org](https://brilliant.org/wiki/graph-coloring-and-chromatic-numbers/)
+        5. Gas Station [leetcode](https://leetcode.com/problems/gas-station/)
+        6. Jump Game [leetcode](https://leetcode.com/problems/jump-game/)
+        7. Container With Most Water [leetcode](https://leetcode.com/problems/container-with-most-water/)
 * Sort
 * Search
 * Graph

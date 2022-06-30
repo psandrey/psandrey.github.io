@@ -172,14 +172,14 @@ Asymptotic Analysis for Recurrences, The “Master Theorem” Method and The “
 
 **Dynamic programming (DP)** is basically an optimization method over plain recursion. It was invented by Bellman in 1950. Bellman used this technique to solve the single-source shortest-path problem in a graph. As with divide and conquer, it is based on dividing the problem into subproblems which are solved recursively. The difference stays in the fact that the subproblems in divide and conquer are disjunctive (i.e. the subproblems are unique on every branch), while for DP some subproblems are overlapping. Thus, to avoid the redundant work we can cache the result of every subproblem when first solved so it can be reused when needed instead of recomputing – sacrifice some space  to speed up the algorithm. \\
 \\
-Storing results can be done in two ways:
+Storing/caching results can be done in two ways:
 * memoization: store the results within the recursive calls
 * tabulation: build a cache table iteratively from smallest subproblems to bigger subproblems
 
 Both approaches can be applied to any problem that is solvable using DP and most of the time both approaches have the same time complexity, however in practice usualy the tabulation performs better, because it consumes less memory. TODO: give examples.
 
 \\
-I want to make a small note here, because I’ve seen that tabulation is referred as bottom-up approach and memoization as top-down approach. This is a common mistake; the DP is a bottom-up approach for both. For memoization recursion goes as deep as possible until the smallest problem is solved immediately (the base case) and on the way back the results are combined to solve the bigger subproblems, so it is a bottom-up approach. For tabulation is obvious.
+I want to make a small note here, because I’ve seen that tabulation is referred as bottom-up approach and memoization as top-down approach. This is a common mistake; the DP is a bottom-up approach for both. For memoization recursion goes as deep as possible until the smallest problem is solved immediately (the base case) and on the way back the results are combined to solve the bigger subproblems, so it is a bottom-up approach. For tabulation is obvious... you need to fill the table from smaller to bigger problems.
 
 \\
 To be able to apply this technique, the problem must exhibit two properties:
@@ -187,17 +187,72 @@ To be able to apply this technique, the problem must exhibit two properties:
 *  **Overlapping subproblems**: if a recursive algorithm visits the same subproblem more than once, then the problem exhibits the overlapping subproblems property.
 
 \\
-Let’s assume we know that a problem has these properties. So, let’s see how to approach and solve it by using DP in 5 steps (from [Erik Demaine](https://en.wikipedia.org/wiki/Erik_Demaine)’s lecture - "double rainbow" :)) ):
-1. define the subproblems
-2, guess part of the solution
-3. relate subproblem's solutions
-4. build the algorithm by using memoization or tabulation
-5. solve the original problem
+Assuming we have a problem thats has these properties, we can approach it in 5-6 steps (from [Erik Demaine](https://en.wikipedia.org/wiki/Erik_Demaine)’s lecture):
+1. Define the subproblems. At this step you need to define how to represent subproblems and find the number of them (usually, we want a polynomial number). 
+2. Relate subproblem's solutions recursively. At this step you need to define a recurrence over an acyclic graph (DAG). Basically, all subproblems dependency must for a DAG. 
+3. Define the base case of the recurrence. If you use tabulation usually you need to prefill it with base cases or if you use memoization you need to define it and stop the recursive calls.
+4. Build the algorithm by using memoization or tabulation.
+5. Solve the original problem. Usually, the original problem is on of the subproblems or the larger one, but sometimes you need to combine some subproblems to solve the original one.
+6. Time and space complexity analysis.
 
+**Note:** I suggest to watch Erik's lectures, they are very good:
+* [Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling](https://www.youtube.com/watch?v=r4-cftqTcdI)
+* [Dynamic Programming, Part 2: LCS, LIS, Coins](https://www.youtube.com/watch?v=KLBCUx1is2c)
+* [Dynamic Programming, Part 3: APSP, Parens, Piano](https://www.youtube.com/watch?v=TDo3r5M1LNo)
+* [Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial](https://www.youtube.com/watch?v=i9OAOk0CUQE)
+
+\\
+DP problems are nice, because they also require some imagination, so you don't just have to apply a pattern to solve them. However, there is a classification/taxonomy that we can imagine depending on how we define the state at a given time:
+* **Prefixes/Suffixes:** you must first solve the smaller subproblems from beginning (or end) and expand subproblems towards the end (or the beginning). Examples: Kadane’s algorithm for Largest Sum Contiguous Subarray, Largest Increasing Subsequence.
+* **Interval:** you must first solve the small subproblems for each index and then extend the subproblem size to the size of the initial problem for the $$ 0 $$ index. Examples: Longest Common Subsequence, Edit Distance (Levenshtein distance), Matrix Chain Ordering, Bellman-Ford, Floyd-Warshall.
+* **Bitmask (*intractable problems*):** the subproblems are divided in subsets and you must first solve the smaller subsets and expand up to the entire set. Example: Bellman-Held-Karp – Shortest Superstring Problem.
+* **Pseudo-polynomial:** you must first solve the smaller subproblems in size and expand up to the maximum numeric value of the input (the largest integer in the input not the length of the input). Examples: Rod cutting, Knapsack 0-1, Coin Change Problem, Partition Problem. 
+
+### Practice Dynamic Programming
+
+* Prefixes/Suffixes: 
+	1. TODO: Kadane
+	2. TODO: Largest Sum Contiguous Subarray
+	3. Largest Increasing Subsequence: [topcoder.com](https://www.topcoder.com/thrive/articles/longest-increasing-subsequence?utm_source=thrive&utm_campaign=thrive-feed&utm_medium=rss-feed)
+* Interval:
+	1. TODO: Longest Common Subsequence
+	2. TODO: Edit Distance (Levenshtein distance)
+	3. <a href="/graph/single_source_shortest_path/bellman_ford/"> Bellman-Ford </a>
+	4. <a href="/graph/all_pairs_shortest_path/floyd_warshall/"> Floyd-Warshall </a>
+* Bitmask:
+	1. TODO: Bellman-Held-Karp (Shortest Superstring Problem)
+* Pseudo-polynomial:
+	1. TODO: Rod cutting
+	2. TODO: Knapsack 0-1
+	3. TODO: Coin Change Problem
 
 ## Greedy
 
-TODO
+A **greedy** algorithm is a heuristic algorithm of making local optimal choice with the hope to obtain global optimum. Basically, it makes a greedy choice at each step, and it never goes back to change its choice. \\
+\\
+**Note:** Most greedy algorithms are not correct, however sometimes is close enough to the optimal solution. \\
+\\
+A greedy algorithm is correct if it exhibits the following two properties:
+* **Optimal structure**: if an optimal solution of a given problem can be obtain by using optimal solutions of its subproblems (just like DP).
+* **Greedy choice property**: a global optimum can be obtained by making the optimal local choice.
+
+**Note:** Usually, a greedy algorithm is easy to find, and it is easy to analyse its complexity, but it is hard to prove is correctness (most of the times it involves some imagination rather than math skills).
+
+\\
+When you need to approach a greedy problem, you can follow the following three steps:
+1.	First, check if it is feasible.
+2.	Define the local optimum choice.
+3.	The choice must be unalterable: once the decision is made at any subsequent step the option does not need to be changed.
+
+### Practice Greedy
+
+1. <a href="/graph/single_source_shortest_path/dijkstra/"> Single-Source Shortest Paths — Dijkstra’s Algorithm </a>
+2. <a href="/graph/minimum_spanning_tree/kruskal/"> Kruskal’s Algorithm for finding Minimum Spanning Tree </a>
+3. <a href="/graph/minimum_spanning_tree/prim/"> Prim’s Algorithm for finding Minimum Spanning Tree </a>
+4. Graph Coloring Problem [brilliant.org](https://brilliant.org/wiki/graph-coloring-and-chromatic-numbers/)
+5. Gas Station [leetcode](https://leetcode.com/problems/gas-station/)
+6. Jump Game [leetcode](https://leetcode.com/problems/jump-game/)
+7. Container With Most Water [leetcode](https://leetcode.com/problems/container-with-most-water/)
 
 ## More reading
 
@@ -208,3 +263,17 @@ TODO
     * [Briliant.org](https://brilliant.org/wiki/divide-and-conquer/)
     * Skiena, second edition, section 4.10, pg. 135
 	* Cormen, third edition, section 4, pg. 65
+* Dynamic Programming
+    * Erik's lectures
+        * [Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling](https://www.youtube.com/watch?v=r4-cftqTcdI)
+        * [Dynamic Programming, Part 2: LCS, LIS, Coins](https://www.youtube.com/watch?v=KLBCUx1is2c)
+        * [Dynamic Programming, Part 3: APSP, Parens, Piano](https://www.youtube.com/watch?v=TDo3r5M1LNo)
+        * [Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial](https://www.youtube.com/watch?v=i9OAOk0CUQE)
+	* Skiena, second edition, section 8, pg. 274
+	* [Topcoder.com](https://www.topcoder.com/thrive/articles/Dynamic%20Programming:%20From%20Novice%20to%20Advanced)
+	* [Briliant.org](https://brilliant.org/wiki/problem-solving-dynamic-programming/?subtopic=algorithms&chapter=dynamic-programming)
+* Greedy
+    * [Briliant.org](https://brilliant.org/wiki/greedy-algorithm/)
+	* [topcoder.com](https://www.topcoder.com/thrive/articles/Greedy is Good)
+
+---
