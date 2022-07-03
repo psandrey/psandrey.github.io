@@ -151,7 +151,8 @@ So, a divide and conquer algorithm break down the initial problem (the general c
 * Step 1 – **Divide** the given problem into a set of subproblems.
 * Step 2 – **Conquer**: solve these subproblems recursively.
 * Step 3 – **Combine** the solutions to the subproblems to solve the original problem.
-Note: when you design an algorithm by using this technique, you need to define 2 things:
+
+**Note:** when you design an algorithm by using this technique, you need to define 2 things:
 1.	The recursive formula (the general case)
 2.	The stopping condition (the base case): the basic problem that can be solved immediately.
 
@@ -164,9 +165,11 @@ Asymptotic Analysis for Recurrences, The “Master Theorem” Method and The “
 1. <a href="/sort/comparison_sort/merge_sort/"> Merge Sort </a>
 2. <a href="/sort/comparison_sort/quick_sort/"> Quicksort </a>
 3. Strassen's algorithm for matrix multiplication: [topcoder.com](https://www.topcoder.com/thrive/articles/strassenss-algorithm-for-matrix-multiplication)
-4. Towers of Hanoi: [Briliant.org](https://brilliant.org/wiki/recurrence-relations-method-of-summation-factors/#example-1-the-tower-of-hanoi-problem)
+4. Towers of Hanoi: [medium.com](https://medium.com/@satoshihgsn/how-many-moves-does-it-take-to-solve-the-tower-of-hanoi-3df515879698)
 5. Majority Element: [leetcode](https://leetcode.com/problems/majority-element/solution/)
 6. Median of Two Sorted Arrays: [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+
+**Note:** Towers of Hanoi is a good problem to understand how recursion and divide and conquer actual work. You could start with this one first.
 
 ## Dynamic programming
 
@@ -211,20 +214,20 @@ DP problems are nice, because they also require some imagination, so you don't j
 ### Practice Dynamic Programming
 
 * Prefixes/Suffixes: 
-	1. TODO: Kadane
-	2. TODO: Largest Sum Contiguous Subarray
+	1. <a href="/paradigm/practice/dynamic_programming#kadanes-algorithm"> Kadane </a>
+	2. <a href="/paradigm/practice/dynamic_programming#largest-sum-contiguous-subarray"> Largest Sum Contiguous Subarray </a>
 	3. Largest Increasing Subsequence: [topcoder.com](https://www.topcoder.com/thrive/articles/longest-increasing-subsequence?utm_source=thrive&utm_campaign=thrive-feed&utm_medium=rss-feed)
 * Interval:
-	1. TODO: Longest Common Subsequence
-	2. TODO: Edit Distance (Levenshtein distance)
+	1. <a href="/paradigm/practice/dynamic_programming#longest-common-subsequence"> Longest Common Subsequence </a>
+	2. <a href="/paradigm/practice/dynamic_programming#edit-distance-levenshtein-distance"> Edit Distance (Levenshtein distance) </a>
 	3. <a href="/graph/single_source_shortest_path/bellman_ford/"> Bellman-Ford </a>
 	4. <a href="/graph/all_pairs_shortest_path/floyd_warshall/"> Floyd-Warshall </a>
 * Bitmask:
-	1. TODO: Bellman-Held-Karp (Shortest Superstring Problem)
+	1. <a href="/paradigm/practice/dynamic_programming#bellman-held-karp-shortest-superstring-problem"> Bellman-Held-Karp (Shortest Superstring Problem) </a>
 * Pseudo-polynomial:
-	1. TODO: Rod cutting
-	2. TODO: Knapsack 0-1
-	3. TODO: Coin Change Problem
+	1. <a href="/paradigm/practice/dynamic_programming#rod-cutting"> Rod cutting </a>
+	2. <a href="/paradigm/practice/dynamic_programming#knapsack-0-1"> Knapsack 0-1 </a>
+	3. <a href="/paradigm/practice/dynamic_programming#coin-change-problem"> Coin Change Problem </a>
 
 ## Greedy
 
