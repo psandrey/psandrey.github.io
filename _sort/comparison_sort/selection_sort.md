@@ -9,6 +9,10 @@ permalink: /sort/comparison_sort/selection_sort/
 
 <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## The Algorithm
 
 **Selection sort** is a simple sorting algorithm based on comparison. It's somewhat similar to the next one - Insertion sort - but it performs worse in most cases. The algorithm builds the sorted sequence as a sorted stack from bottom up. Each step it finds the next item to stack it on top such that the stack remains ordered.
@@ -38,7 +42,7 @@ void sort(vector<int> &a) {
 ```
 ## Correctness
 
-Initially, the stack is empty, so the outter loop starts from index $$ 0 $$ to $$ n - 1 $$ - basically it stacks all items. The inner loop find the first minimum item and swap it with the item from index 0. Now, the stack contains the first item and the inner loop finds the next minimum from the remaing items between index $$ 1 $$ and $$ n - 1 $$. So, the algorithm sort any given input.
+Initially, the stack is empty, so the outter loop starts from index $$ 0 $$ to $$ n - 1 $$ - basically it stacks all items. The inner loop find the first minimum item and swap it with the item from index 0. Now, the stack contains the first item and the inner loop finds the next minimum from the remaining items between index $$ 1 $$ and $$ n - 1 $$. So, the algorithm sort any given input.
 
 ## Complexity Analysis
 
@@ -59,4 +63,8 @@ $$ T(n) = \sum_{i = 0}^{n-1} \left(\theta(n - i - 1) \right) = \theta\left(\frac
 
  * $$ S(n) = \theta(1) $$.
 
----
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">

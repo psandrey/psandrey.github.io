@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Insertion Sort
-permalink: /sort/comparison_sort/insertsion_sort/
+permalink: /sort/comparison_sort/insertion_sort/
 ---
 
 * toc
@@ -9,13 +9,17 @@ permalink: /sort/comparison_sort/insertsion_sort/
 
 <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## The Algorithm
 
-**Insertion sort** is another simple sorting algorithm based on comparison, but compared with the provious three, this one it is used in real applications. It maintains a sorted subsequence in which it inserts each item in its proper place, and thus produces the sorted sequence. The analogy I've seen most often is with the way people sort the playing cards... a good one.
+**Insertion sort** is another simple sorting algorithm based on comparison, but unlike with the previous three, this one it is actually used. It maintains a sorted subsequence into which it inserts each item in its place, and thus produces the sorted sequence. The analogy I've seen most often is with the way people sort the playing cards.
 
 ### Description
 
-Lets assume that we have sorted the subsequence from index $$ 0 $$ to some index $$ i-1 \lt n - 1 $$ and the subsequence from $$ i $$ to $$ n - 1 $$ it is not. As the algorithm suggest, we need to insert one by one all items from  $$ i $$ to $$ n - 1 $$ into the sorted subsequence to their rightful place. First, we insert the i-th item by swapping it with all items to its left that are bigger then him. Then, we need to insert the next item in the same way (basically, we do the same with all items up to $$ n - 1 $$). See an example below:\\
+Lets assume that we have sorted the subsequence from index $$ 0 $$ to some index $$ i-1 \lt n - 1 $$ and the subsequence from $$ i $$ to $$ n - 1 $$ it is not. As the algorithm suggest, we need to insert all items from  $$ i $$ to $$ n - 1 $$ one by one into the sorted subsequence to their rightful place. The i-th item is inserted first by swapping it with all items to its left that are bigger then him. Then, the next item is inserted in the same way (basically, all items up to $$ n - 1 $$ are inserted). See an example below:\\
 ![pic_01](/assets/images/sort/comparison/insertion_sort/insertion_sort_1.png){:height="185pt" style="float: left"}
 <br><br>
 The i-th item (index 4, number 3) is inserted into the sorted subsequence (index 0 to 3).\\
@@ -43,7 +47,7 @@ void sort(vector<int> &a) {
 
 ## Correctness
 
-Initially, the sorted subsequence contains only the item from index $$ 0 $$ and the outter loop runs for all items starting with second index up to $$ n - 1 $$, thus all items are inserted. The inner loop swap i-th item at most $$ i - 1 $$ times, so that the subsequence is kept invariant. So, the algorithm sort any given input.
+Initially, the sorted subsequence contains only the item from index $$ 0 $$ and the outter loop runs for all items starting with second index up to $$ n - 1 $$, thus all items are inserted. The inner loop swap i-th item at most $$ i - 1 $$ times and the subsequence is kept invariant. So, the algorithm sort any given input.
 
 ## Complexity Analysis
 
@@ -68,4 +72,8 @@ $$ T(n) = \sum_{i = 1}^{n-1} \left( \theta(1) \right) = \theta(n) $$.
 
  * $$ S(n) = \theta(1) $$.
 
----
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">

@@ -9,6 +9,10 @@ permalink: /sort/comparison_sort/bogosort/
 
 <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## The Algorithm
 
 **Bogosort** (also known as shotgun sort, stupid sort, random sort, permutation sort, or slowsort) is a sorting algorithm based on the "trial and error" paradigm (varied attempts which are continued until success, or until the practicer stops trying), (source: wikipedia). 
@@ -70,4 +74,8 @@ Certainly one of the permutations has the items in sorted order. Each time a seq
 
  * $$ S(n) = \theta(1) $$.
 
----
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">

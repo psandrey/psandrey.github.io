@@ -9,38 +9,40 @@ permalink: /sort/comparison_sort/bubble_sort/
 
 <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
 ## The Algorithm
 
 **Bubble sort** (aka sinking sort) is probably the simplest sorting algorithm based on comparison. The idea is to compare adjacent items and then swap their positions if they are not in sorted order. The sequence is sweeped until all adjacent items are in sorted order and no positions are swapped. 
 
 ### Description
 
-There can be at most $$ n $$ sweep, since we have $$ n $$ items to sink. Each item can sink up to $$ n $$ positions. So, we need two loops: the outter loop which represents the number of sweeps and the inner loop which sinks each item to its correct possition. For each sweep we need a flag which is set if any positions were swapped, so that we know if another sweep is needed. In the ineer loop we check the order of every 2 adjacent items and if it is wrong then we swap them. If we swap then we also set the flag. After the inner loop ends, in the outter loop the flag is checked and if it is set then the algorithm ends, otherwise we reset the flag and sweep again.
+There can be at most $$ n $$ sweep, since we have $$ n $$ items to sink. Each item can sink up to $$ n - 1 $$ positions. So, we need two loops: the outter loop which represents the number of sweeps and the inner loop which sinks each item to its correct position. For each sweep we need a flag which is set if any positions were swapped, so that we know if another sweep is needed and check again. In the inner loop we check the order of every 2 adjacent items and we swap them if they are not ordered. If we swap, then we also set the flag. After the inner loop ends, in the outter loop the flag is checked and if it is not set then the algorithm ends, otherwise we sweep again.
 
 ### Implementation
 
 ```cpp
 void sort(vector<int>& a) {
     if (a.size() <= 1) return;
+    bool flag = true;
 
-    for (int i = 0; i < (int)a.size(); ++i) {
-
-        bool swapped = false;
-        for (int j = 0; j < (int)a.size() - 1; ++j) {
-            if (a[j] > a[j + 1]) {
-                swap(a[j], a[j + 1]);
-                swapped = true;
+    while(flag) {
+        flag = false;
+        for (int j = 1; j < (int)a.size(); ++j) {
+            if (a[j] < a[j - 1]) {
+                swap(a[j], a[j - 1]);
+                flag = true;
             }
         }
-
-        if (!swapped) break;
     }
 }
 ```
 
 ## Correctness
 
-There are at most $$ n $$ sweeps since there are at most $$ n $$ items that needs to sink to the right place and each item can sking at most $$ n $$ positions. So, the 2 loops produce the sorted sequence for any given sequence.
+There are at most $$ n $$ sweeps since there are at most $$ n $$ items that needs to sink to the right place and each item can skink at most $$ n $$ positions. So, the 2 loops produce the sorted sequence for any given sequence.
 
 ## Complexity Analysis
 
@@ -52,17 +54,21 @@ There are at most $$ n $$ sweeps since there are at most $$ n $$ items that need
 
 <hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
 
-In the **wors-case**, the outter loop runs n times. The inner loop runs n-1 times for the first outter loop, n-2 times for the second outter loop and so on.
-$$ T(n) = (n-1) + (n-2) + (n-3) + ... + 1 + 1 = \frac{n(n-1)}{2} + 1 = \theta(n^2) $$. \\
+In the **wors-case**, the outter loop length is n, so the inner loop runs n times:
+$$ T(n) = \theta(n^2) $$. \\
 \\
-In the **average-case** (when the sequence is half sorted), the outter loop runs $$ \frac{n}{2} + 1 $$ times and the intter loop runs the same as before (n-1 times for the first outter loop, n-2 times for the second outter loop and so on).
-$$ T(n) = (n-1) + (n-2) + (n-3) + ... + \frac{n}{2} + 1 = \theta(n^2) $$.\\
+In the **average-case** (when the sequence is half sorted), the outter loop length is $$ \frac{n}{2} + 1 $$, so the inner loop runs $$ \frac{n}{2} + 1 $$ times:
+$$ T(n) = (\frac{n}{2} + 1) * n = \theta(n^2) $$.\\
 \\
-In the **best-case** (when the sequence is already sorted). the outter and inner loop runs once.
-$$ T(n) = \theta(1) $$.
+In the **best-case** (when the sequence is already sorted), the outter length ia 1, so inner loop runs once:
+$$ T(n) = \theta(n) $$.
 
 ### Space Complexity (auxiliary)
 
  * $$ S(n) = \theta(1) $$.
 
----
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
+
+<pre>/ <a onclick="window.history.back()" style="cursor:pointer;"> Back </a> / <a href="/"> Home </a> / </pre>
+
+<hr style="height:1px; border:none; color:#ccc; background-color:#ccc;">
